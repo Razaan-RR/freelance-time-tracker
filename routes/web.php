@@ -6,6 +6,9 @@ use App\Http\Controllers\ClientController;
 use App\Http\Middleware\SessionAuth;
 use App\Http\Controllers\ProjectController;
 
+Route::get('/', function () {
+    return view('registrationPage');
+});
 
 Route::get('/registrationPage', function () {
     return view('registrationPage');
@@ -35,4 +38,4 @@ Route::middleware(['web', App\Http\Middleware\SessionAuth::class])->group(functi
     Route::post('/projects', [ProjectController::class, 'add']);
 });
 
-Route::post('/projects/{project}/status', [ProjectController::class, 'updateStatus']);
+Route::patch('/projects/{project}/update-status', [ProjectController::class, 'updateStatus']);

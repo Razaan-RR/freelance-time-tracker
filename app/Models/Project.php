@@ -8,7 +8,9 @@ class Project extends Model
 {
     protected $fillable = ['client_id', 'title', 'description', 'status', 'deadline'];
 
-    public function client(){
+    public function client()
+    {
         return $this->belongsTo(Client::class);
     }
 }
+

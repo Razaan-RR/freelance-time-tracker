@@ -21,15 +21,16 @@ class ProjectController extends Controller
         return redirect('/dashboard');
     }
 
-    public function updateStatus(Request $request, Project $project){
+    public function updateStatus(Request $request, Project $project)
+    {
         $request->validate([
             'status' => 'required|in:active,completed',
         ]);
-    
+
         $project->status = $request->status;
         $project->save();
-    
-        return redirect('/dashboard');
+
+        return redirect('/dashboard')->with('success', 'Project status updated.');
     }
 
 }
