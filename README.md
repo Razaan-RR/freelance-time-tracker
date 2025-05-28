@@ -99,6 +99,4 @@ You can test the API using the included Postman collection:
 - Import the file `postman/freelance-time-tracker.postman_collection.json` into your Postman app.
 - The collection includes all API endpoints with example requests.
 
-This helps you quickly test and explore the API without manual setup.
-
 
